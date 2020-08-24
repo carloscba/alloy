@@ -1,154 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self' *.demdex.net;
-            script-src 'self' 'unsafe-inline' assets.adobedtm.com cdn.tt.omtrdc.net alloy.sc.omtrdc.net;
+            script-src 'self' 'unsafe-inline' assets.adobedtm.com cdn.tt.omtrdc.net alloy.sc.omtrdc.net ujslatest.112.2o7.net;
             style-src 'self' 'unsafe-inline' cdn.tt.omtrdc.net;
             img-src * data:;
-            connect-src 'self' *.alloyio.com *.localalloy.com alloyengineering.tt.omtrdc.net alloy.sc.omtrdc.net *.demdex.net http://127.0.0.1:5500 *.adobedc.net https://beta.adobedc.net konductor-qe.apps-exp-edge-npe-va6.experience-edge.adobeinternal.net"
+            connect-src 'self' *.alloyio.com *.localalloy.com unifiedjslab.tt.omtrdc.net alloy.sc.omtrdc.net *.demdex.net http://127.0.0.1:5500 *.adobedc.net https://beta.adobedc.net konductor-qe.apps-exp-edge-npe-va6.experience-edge.adobeinternal.net"
     />
-    <meta name="description" content="Alloy - Adobe Experience Platform Web SDK">
+    <meta
+      name="description"
+      content="Alloy - Adobe Experience Platform Web SDK"
+    />
     <title>Alloy | Adobe Experience Platform Web SDK</title>
-
     <script>
-        var dataLayer = {
-          // Demonstrates overriding automatically collected data
-          device: {
-            screenHeight: 666
-          }
-        };
+      !function(e,a,n,t){var i=e.head;if(i){
+      if (a) return;
+      var o=e.createElement("style");
+      o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),
+      setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
+      (document, document.location.href.indexOf("mboxEdit") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
     </script>
 
-    <script>
-        !function(e,a,n,t){var i=e.head;if(i){
-        if (a) return;
-        var o=e.createElement("style");
-        o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),
-        setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
-        (document, document.location.href.indexOf("mboxEdit") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
-    </script>
-      
-    <!-- Using UnifiedEdgeQEOnly, property Old Libs -->
-    <script src="//assets.adobedtm.com/4b26fd82417d/9aa5e05754f3/launch-1444e0c5b3d9-development.min.js" async></script>
+    <!-- Using Unified JS LAB, property alloyio.com-legacy -->
+    <script src="//assets.adobedtm.com/1281f6ff0c59/4bbb6b9dc376/launch-6bd6a4658aaa-development.min.js" async></script>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
-	<div class="container">
-    <div id="form_container">
+  <body>
+    <div class="container">
+      <div id="form_container">
         <div class="row no-gutters">
-            <div class="col-lg-4">
-                <div id="left_form">
-                    <h2>Alloy Web SDK</h2>
-                    <h5>Sandbox using ALL legacy libraries.</h5>
-                    <li>Adobe Analytics</li>
-                    <li>Adobe Target</li>
-                    <li>Adobe ECID</li>
-                </div>
+          <div class="col-lg-4">
+            <div id="left_form">
+              <h2>Alloy Web SDK</h2>
+              <h5>Sandbox using ALL legacy libraries.</h5>
+              <li>Adobe Analytics</li>
+              <li>Adobe Target</li>
+              <li>Adobe ECID</li>
             </div>
-            <div class="col-lg-8">
-                <div id="wizard_container">
-                    <div id="top-wizard">
-                        <div id="progressbar"></div>
-                        <span id="location"></span>
-                    </div>
-                    <form id="wrapped" method="post">
-                        <input id="website" name="website" type="text" value="">
-                        <div id="middle-wizard">
-                            <div class="step">
-                                <h3 class="main_question"><i class="arrow_right"></i>Some awesome default content.</h3>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Opt In
-                                                <input type="button" class="optIn" value="Opt In" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Opt Out
-                                                <input type="button" name="question_1[]" value="Opt Out" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Sync identity
-                                                <input type="button" name="question_1[]" value="Sync identity" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Event with merge ID 1
-                                                <input type="button" name="question_1[]" value="Send event with merge ID 1" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Event with merge ID 2
-                                                <input type="button" name="question_1[]" value="US States" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Reset Merge ID 1
-                                                <input type="button" name="question_1[]" value="Reset Merge ID 1" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="container_check version_2">Reset Merge ID 2
-                                                <input type="button" name="question_1[]" value="Reset Merge ID 2" class="required">
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+          </div>
+          <div class="col-lg-8">
+            <div id="wizard_container">
+              <div id="top-wizard">
+                <span id="location"></span>
+              <form id="wrapped" method="post">
+                <input id="website" name="website" type="text" value="" />
+                <div id="middle-wizard">
+                  <div class="step">
+                    <h3 class="main_question">
+                      <i class="arrow_right"></i>Some awesome default content.
+                    </h3>
 
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<div class="cd-overlay-nav">
-    <span></span>
-</div>
-<div class="cd-overlay-content">
-    <span></span>
-</div>
 
-	<!-- Modal info -->
-	<div class="modal fade" id="more-info" tabindex="-1" role="dialog" aria-labelledby="more-infoLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="more-infoLabel">Alloy - Web SDK</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p>Adobe Experience Platform Web SDK is a client-side JavaScript library that allows customers of the Adobe Experience Cloud to interact with the various services in the Experience Cloud through the Adobe Experience Platform Edge Network. In addition to the JavaScript library, there is a Launch extension to help with your Web SDK configurations.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
-</body>
+    <!-- Modal info -->
+    <div
+      class="modal fade"
+      id="more-info"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="more-infoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="more-infoLabel">Alloy - Web SDK</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Adobe Experience Platform Web SDK is a client-side JavaScript
+              library that allows customers of the Adobe Experience Cloud to
+              interact with the various services in the Experience Cloud through
+              the Adobe Experience Platform Edge Network. In addition to the
+              JavaScript library, there is a Launch extension to help with your
+              Web SDK configurations.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn_1" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
